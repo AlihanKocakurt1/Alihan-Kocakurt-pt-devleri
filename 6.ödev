@@ -1,0 +1,27 @@
+Ödev: Yukarıdaki örneği ikili sayı sistemindeki değer klavyeden girilecek şekilde yeniden düzenleyiniz
+
+
+Console.Write("İkili (Binary) Sayıyı Girin: ");
+        string ikiliSayiStr = Console.ReadLine();
+
+        // Girilen ikili sayıyı ters çevirme
+        char[] charArray = ikiliSayiStr.ToCharArray();
+        Array.Reverse(charArray);
+        string tersIkiliSayiStr = new string(charArray);
+
+        int onluDeger = 0;
+        int tabanDeger = 1;
+
+        // Her bir basamağı işleme alma
+        for (int i = 0; i < tersIkiliSayiStr.Length; i++)
+        {
+            int basamakDeger = Convert.ToInt32(tersIkiliSayiStr[i].ToString());
+
+            // Her bir basamağı onlu sayıya ekleme
+            onluDeger += basamakDeger * tabanDeger;
+
+            // Taban değerini güncelleme
+            tabanDeger *= 2;
+        }
+
+        Console.WriteLine("Onlu (Decimal) Sayı: " + onluDeger);
