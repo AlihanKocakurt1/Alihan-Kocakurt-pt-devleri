@@ -1,0 +1,37 @@
+
+Öyle bir program yazın ki kullanıcıdan bir sayı istesin. Daha sonra bu sayı ile 1 arasındaki TEK veya ÇİFT
+tamsayıların toplamını hesaplayarak sonucu ekrana yazsın. Kullanıcıya TEK veya ÇİFT tamsayılar ile ilgili işlem
+yapılacağını sorsun
+
+
+
+
+Console.WriteLine("Sayıyı girin:");
+        int sayi = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Hangi tür tamsayılarla işlem yapmak istiyorsunuz? (TEK/ÇİFT)");
+        string tur = Console.ReadLine().ToUpper();
+
+        int toplam = 0;
+
+        if (tur == "TEK")
+        {
+            for (int i = 1; i <= sayi; i += 2)
+            {
+                toplam += i;
+            }
+        }
+        else if (tur == "ÇİFT")
+        {
+            for (int i = 2; i <= sayi; i += 2)
+            {
+                toplam += i;
+            }
+        }
+        else
+        {
+            Console.WriteLine("Geçersiz tür seçimi.");
+            return;
+        }
+
+        Console.WriteLine($"1 ile {sayi} arasındaki {tur} tamsayıların toplamı: {toplam}");
