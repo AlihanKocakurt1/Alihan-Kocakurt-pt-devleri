@@ -1,0 +1,34 @@
+int sayi, a;
+        string[] il = { "Muş", "Ağrı", "Bolu", "Mersin", "Ankara", "Sivas", "Kayseri" };
+        string[] isim = { "Asuman", "İclal", "Emin", "Bekir", "Ahmet", "Can", "Esma" };
+        bool[] D = new bool[7];
+
+        Console.WriteLine("Başlangıç Bool D dizisi:");
+        for (a = 0; a < 7; a++)
+        {
+            Console.WriteLine("Bool D dizisinin " + a + ". elemanı = " + D[a]);
+        }
+
+        Random rastgele = new Random();
+
+        for (a = 0; a < 7; a++)
+        {
+            do
+            {
+                sayi = rastgele.Next(0, 7);
+            } while (D[sayi] == true);
+
+            D[sayi] = true;
+            Console.WriteLine(isim[a] + "\t= " + il[sayi]);
+        }
+
+        Console.WriteLine("\nSon Bool D dizisi:");
+        for (a = 0; a < 7; a++)
+        {
+            Console.WriteLine("Bool D dizisinin " + a + ". elemanı = " + D[a]);
+        }
+
+        Console.Write("\nPress any key to continue . . . ");
+        Console.ReadKey(true);
+
+Yukarıdaki programı öğretmenlerin de sırayla değil, rastgele seçileceği şekilde yeniden düzenleyiniz
