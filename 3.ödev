@@ -1,0 +1,22 @@
+
+Öyle bir program yazın ki kullanıcının klavyeden girdiği sayıları toplasın, kullanıcı klavyeden 83 girerse toplama
+işlemini bitirsin ve sonucu ekrana yazsın.
+
+
+
+
+int toplam = 0;
+int sayi;
+
+Console.WriteLine("Sayıları girmeye başlayın. Toplamak için 83'e basın.");
+
+do
+{
+    Console.Write("Sayı girin: ");
+    sayi = Convert.ToInt32(Console.ReadLine());
+
+    toplam += sayi;
+
+} while (sayi != 83);
+
+Console.WriteLine($"Toplam: {toplam}");
