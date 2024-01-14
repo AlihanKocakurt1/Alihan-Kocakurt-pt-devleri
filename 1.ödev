@@ -1,0 +1,87 @@
+Otomobil için 2 saat: 5tl sonraki her saat 1 tl, 10 saatten sonrası günlük sabit ücret…
+Kamyon için 2 saat 8 tl, sonraki her saat 2 tl, 8 saatten sonra günlük sabit ücret
+İş makinası 2 saat 12 tl sonraki her saat 3 tl, 8 saatten sonra günlük sabit
+Otoparka gelen bir aracın kalma süresi ve araç türüne göre çıkış ücretini hesaplayan programın algoritmasını
+yazınız veya çiziniz veya kodlayınız
+
+
+
+Console.WriteLine("Araç Türünü Girin (Otomobil, Kamyon, İş Makinası):");
+        string aracTuru = Console.ReadLine();
+
+        Console.WriteLine("Kalma Süresini Saat Olarak Girin:");
+        int kalmaSuresi = Convert.ToInt32(Console.ReadLine());
+
+        double cikisUcreti = 0;
+
+        if (aracTuru.ToLower() == "otomobil")
+        {
+            if (kalmaSuresi <= 2)
+            {
+                cikisUcreti = 5;
+            }
+            else
+            {
+                cikisUcreti = 5; // İlk 2 saat için sabit ücret
+                int ekSaatler = kalmaSuresi - 2;
+
+                // Her saat başına 1 TL ek ücret
+                cikisUcreti += Math.Min(8, ekSaatler) * 1;
+
+                // Eğer kalma süresi 10 saatten fazla ise günlük sabit ücret
+                if (ekSaatler > 8)
+                {
+                    cikisUcreti += 10;
+                }
+            }
+        }
+        else if (aracTuru.ToLower() == "kamyon")
+        {
+            if (kalmaSuresi <= 2)
+            {
+                cikisUcreti = 8;
+            }
+            else
+            {
+                cikisUcreti = 8; // İlk 2 saat için sabit ücret
+                int ekSaatler = kalmaSuresi - 2;
+
+                // Her saat başına 2 TL ek ücret
+                cikisUcreti += Math.Min(6, ekSaatler) * 2;
+
+                // Eğer kalma süresi 8 saatten fazla ise günlük sabit ücret
+                if (ekSaatler > 6)
+                {
+                    cikisUcreti += 10;
+                }
+            }
+        }
+        else if (aracTuru.ToLower() == "iş makinası")
+        {
+            if (kalmaSuresi <= 2)
+            {
+                cikisUcreti = 12;
+            }
+            else
+            {
+                cikisUcreti = 12; // İlk 2 saat için sabit ücret
+                int ekSaatler = kalmaSuresi - 2;
+
+                // Her saat başına 3 TL ek ücret
+                cikisUcreti += Math.Min(6, ekSaatler) * 3;
+
+                // Eğer kalma süresi 8 saatten fazla ise günlük sabit ücret
+                if (ekSaatler > 6)
+                {
+                    cikisUcreti += 10;
+                }
+            }
+        }
+        else
+        {
+            Console.WriteLine("Geçersiz araç türü.");
+            return;
+        }
+
+        Console.WriteLine($"{aracTuru} için çıkış ücreti: {cikisUcreti} TL");
+    
