@@ -1,0 +1,40 @@
+int sayi, a, e = 1;
+
+        Console.Write("Dizi Boyutunu Giriniz: ");
+        if (int.TryParse(Console.ReadLine(), out sayi) && sayi > 1)
+        {
+            int[] B = new int[sayi];
+
+            for (a = 0; a < sayi; a++)
+            {
+                Console.Write("B[" + a + "] = ");
+                if (int.TryParse(Console.ReadLine(), out B[a]))
+                {
+                    // Dizi elemanlarını girişten al
+                }
+                else
+                {
+                    Console.WriteLine("Geçersiz giriş. Lütfen bir tam sayı giriniz.");
+                    return;
+                }
+            }
+
+            for (a = 2; a < B.Length; a++)
+            {
+                if (Math.Abs(B[0] - B[a]) < Math.Abs(B[0] - B[e]))
+                {
+                    e = a;
+                }
+            }
+
+            Console.WriteLine("İlk Sayıya En Yakın Sayı = " + B[e]);
+        }
+        else
+        {
+            Console.WriteLine("Geçersiz giriş. Dizi boyutu en az 2 olmalıdır.");
+        }
+
+        Console.Write("Press any key to continue . . . ");
+        Console.ReadKey(true);
+
+Yukarıdaki programı, dizi değerleri dışarıdan girilecek şekilde düzenleyiniz
