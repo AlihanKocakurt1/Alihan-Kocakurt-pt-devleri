@@ -1,0 +1,43 @@
+int EnBuyuk = -1500, EnKucuk = 1500;
+        int yerEnBuyuk = 0, yerEnKucuk = 0;
+
+        string[] A = { "Emin", "Emir", "İclal", "Bekir", "Cem", "Arda", "Kaan", "Metin", "Can", "Ramiz" };
+        int[] B = { 56, 78, 95, 23, 95, 87, 61, 77, 45, 33 };
+
+        for (int c = 0; c < B.Length; c++)
+        {
+            if (B[c] > EnBuyuk)
+            {
+                EnBuyuk = B[c];
+                yerEnBuyuk = c;
+            }
+
+            if (B[c] < EnKucuk)
+            {
+                EnKucuk = B[c];
+                yerEnKucuk = c;
+            }
+        }
+
+        Console.WriteLine("En Yüksek Notu Alan Kişi(ler): ");
+        for (int i = 0; i < B.Length; i++)
+        {
+            if (B[i] == EnBuyuk)
+            {
+                Console.WriteLine(A[i]);
+            }
+        }
+
+        Console.WriteLine("\nEn Düşük Notu Alan Kişi(ler): ");
+        for (int i = 0; i < B.Length; i++)
+        {
+            if (B[i] == EnKucuk)
+            {
+                Console.WriteLine(A[i]);
+            }
+        }
+
+        Console.Write("\nPress any key to continue . . . ");
+        Console.ReadKey(true);
+
+en yüksek ve en düşük notu alan birden fazla kişi varsa onların da isimlerini yazdırınız.
