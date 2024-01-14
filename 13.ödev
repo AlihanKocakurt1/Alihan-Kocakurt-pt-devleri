@@ -1,0 +1,41 @@
+byte a;
+        string s = " ";
+        string[] Birler = { "Bir", "İki", "Üç", "Dört", "Beş", "Altı", "Yedi", "Sekiz", "Dokuz" };
+        string[] Onlar = { "On", "Yirmi", "Otuz", "Kırk", "Elli", "Altmış", "Yetmiş", "Seksen", "Doksan" };
+        string[] Yuzler = { "Yüz", "İkiYüz", "ÜçYüz", "DörtYüz", "BeşYüz", "AltıYüz", "YediYüz", "SekizYüz", "DokuzYüz" };
+
+        Console.Write("Bir Sayı Giriniz: ");
+        if (Byte.TryParse(Console.ReadLine(), out a))
+        {
+            if (a >= 1 && a <= 999)
+            {
+                if (a / 100 >= 1)
+                {
+                    s = Yuzler[(a / 100) - 1];
+                }
+
+                if (a % 100 / 10 >= 1)
+                {
+                    s = s + Onlar[(a % 100 / 10) - 1];
+                }
+
+                if (a % 10 != 0)
+                {
+                    s = s + Birler[(a % 10) - 1];
+                }
+
+                Console.WriteLine(s);
+            }
+            else
+            {
+                Console.WriteLine("Girilen sayı 1 ile 999 arasında değil. Lütfen uygun bir sayı giriniz.");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Geçersiz giriş. Lütfen bir tam sayı giriniz.");
+        }
+
+        Console.Write("Devam etmek için bir tuşa basınız. . . ");
+        Console.ReadKey(true);
+
