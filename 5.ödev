@@ -1,0 +1,50 @@
+Öyle bir program yazın ki kullanıcıdan İKİ sayı istesin. Daha sonra bu İKİ sayı arasındaki TEK veya ÇİFT
+tamsayıların toplamını hesaplayarak sonucu ekrana yazsın. Kullanıcıya TEK veya ÇİFT tamsayılar ile mi ilgili işlem
+yapılacağını sorsun
+
+
+
+Console.WriteLine("İki sayıyı girin:");
+        int sayi1 = Convert.ToInt32(Console.ReadLine());
+        int sayi2 = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Hangi tür tamsayılarla işlem yapmak istiyorsunuz? (TEK/ÇİFT)");
+        string tur = Console.ReadLine().ToUpper();
+
+        if (sayi1 > sayi2)
+        {
+            // Eğer sayi1 büyükse, sayi1 ve sayi2'yi değiştir
+            int temp = sayi1;
+            sayi1 = sayi2;
+            sayi2 = temp;
+        }
+
+        int toplam = 0;
+
+        if (tur == "TEK")
+        {
+            for (int i = sayi1; i <= sayi2; i++)
+            {
+                if (i % 2 != 0)
+                {
+                    toplam += i;
+                }
+            }
+        }
+        else if (tur == "ÇİFT")
+        {
+            for (int i = sayi1; i <= sayi2; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    toplam += i;
+                }
+            }
+        }
+        else
+        {
+            Console.WriteLine("Geçersiz tür seçimi.");
+            return;
+        }
+
+        Console.WriteLine($"{sayi1} ile {sayi2} arasındaki {tur} tamsayıların toplamı: {toplam}");
