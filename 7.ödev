@@ -1,0 +1,26 @@
+Öyle bir program yazın ki, önce kullanıcıya kaç adet sayı girmek istediğini sorsun. Daha sonra kullanıcıdan sayı
+girmesini istesin. Kullanıcı fark etse de etmese de baştan girdiği adet kadar sayı tamamlandığında bu sayıların toplamını
+ve ortalamasını hesaplayarak ekrana yazsın.
+
+
+
+
+
+
+Console.Write("Kaç adet sayı girmek istiyorsunuz? ");
+        int sayiAdedi = Convert.ToInt32(Console.ReadLine());
+
+        int toplam = 0;
+
+        for (int i = 1; i <= sayiAdedi; i++)
+        {
+            Console.Write($"{i}. sayıyı girin: ");
+            int sayi = Convert.ToInt32(Console.ReadLine());
+
+            toplam += sayi;
+        }
+
+        double ortalama = (double)toplam / sayiAdedi;
+
+        Console.WriteLine($"Girdiğiniz {sayiAdedi} sayının toplamı: {toplam}");
+        Console.WriteLine($"Girdiğiniz {sayiAdedi} sayının ortalaması: {ortalama}");
