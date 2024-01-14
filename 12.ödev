@@ -1,0 +1,29 @@
+byte a;
+string s = " ";
+string[] Birler = { "Bir", "İki", "Üç", "Dört", "Beş", "Altı", "Yedi", "Sekiz", "Dokuz" };
+string[] Onlar = { "On", "Yirmi", "Otuz", "Kırk", "Elli", "Altmış", "Yetmiş", "Seksen", "Doksan" };
+
+Console.Write("Bir Sayı Giriniz (1-99): ");
+if (Byte.TryParse(Console.ReadLine(), out a) && a >= 1 && a <= 99)
+{
+    if (a / 10 >= 1)
+    {
+        s = Onlar[(a / 10) - 1];
+    }
+
+    if (a % 10 != 0)
+    {
+        s = s + Birler[(a % 10) - 1];
+    }
+
+    Console.WriteLine(s);
+}
+else
+{
+    Console.WriteLine("Geçersiz giriş. Lütfen 1 ile 99 arasında bir sayı giriniz.");
+}
+
+Console.Write("Devam etmek için bir tuşa basınız. . . ");
+Console.ReadKey(true);
+
+ Programda önce girilen sayının en çok iki basamaklı ve 1 – 99 arasında pozitif sayı olduğunu kontrol ettiriniz
